@@ -14,12 +14,11 @@ class CloneTinder extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.blue,
         fontFamily: 'Ubuntu',
       ),
       initialRoute: '/Teste',
       routes: {
-        '/Teste': (_) => Teste(),
+        '/Teste': (_) => const Teste(),
       },
     );
   }

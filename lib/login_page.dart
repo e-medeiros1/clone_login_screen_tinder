@@ -2,12 +2,11 @@ import 'package:clone_tinder/tinder_button.dart';
 import 'package:flutter/material.dart';
 
 class Teste extends StatelessWidget {
-  final ImageIcon image;
-
-  const Teste({Key? key, required this.image}) : super(key: key);
+  const Teste({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // final ImageProvider _imageProvider;
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -24,7 +23,8 @@ class Teste extends StatelessWidget {
                       // margin: const EdgeInsets.all(10),
                       // padding: const EdgeInsets.all(10),
                       width: double.infinity,
-                      height: 900,
+                      // height: 1024,
+                      height: 901,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
@@ -38,13 +38,13 @@ class Teste extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 600),
+                      padding: const EdgeInsets.only(bottom: 620),
                       child: Image.asset(
                         'assets/images/tinder_logo.png',
                         fit: BoxFit.cover,
                         alignment: Alignment.topCenter,
                         color: Colors.white,
-                        scale: 1.2,
+                        scale: 1.3,
                       ),
                     ),
 
@@ -52,61 +52,59 @@ class Teste extends StatelessWidget {
                       padding: const EdgeInsets.all(25.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             'By clicking Log in, you agree with our Terms. Learn how we process your data in our Privacy Policy and Cookies Policy.',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 15,
+                              fontSize: 16,
                               fontWeight: FontWeight.w400,
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           //Botão google
-                          TinderButton(
-                            margem: EdgeInsets.only(left: 68),
-                            // icone: Icons.g_mobiledata,
+
+                          const TinderButton(
                             texto: 'LOG IN WITH GOOGLE',
-                             
- ),
-                        
+                            imagem: AssetImage('assets/images/google.png'),
+                            cor: Colors.black87,
+                          ),
+
                           //Espaçador
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           TinderButton(
-                            margem: EdgeInsets.only(left: 58),
-                            // icone: Icons.g_mobiledata,
-                            texto: 'LOG IN WITH FACEBOOK',
-                          ),
+                              texto: 'LOG IN WITH FACEBOOK',
+                              imagem: const AssetImage(
+                                  'assets/images/facebook.png'),
+                              cor: Colors.blue.shade500),
                           //Espaçador
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           //Botão número
-                          TinderButton(
-                            margem: EdgeInsets.only(left: 46),
-                            // icone: ImageIcon(
-                            //   AssetImage('assets/images/google_logo.png'),
-                            // ),
-                            texto: 'LOG IN WITH PHONE NUMBER',
+                          const TinderButton(
+                            texto: 'LOG IN WITH YOUR PHONE',
+                            imagem: AssetImage('assets/images/chats.png'),
+                            cor: Colors.black87,
                           ),
                           // Espaçador
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
-                          Text(
+                          const Text(
                             'Trouble logging in?',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 18,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                         ],
