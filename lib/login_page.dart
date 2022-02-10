@@ -22,9 +22,9 @@ class Teste extends StatelessWidget {
                     Container(
                       // margin: const EdgeInsets.all(10),
                       // padding: const EdgeInsets.all(10),
-                      width: double.infinity,
+                      width: MediaQuery.of(context).size.width,
                       // height: 1024,
-                      height: 901,
+                      height: MediaQuery.of(context).size.height,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
