@@ -2,18 +2,22 @@ import 'package:flutter/material.dart';
 
 class TinderButton extends StatelessWidget {
   final String texto;
-  final ButtonStyle? estilo;
-  final IconData? icone;
-  final EdgeInsets? margem;
+  final ImageProvider? imagem;
+  final Color? cor;
+  final ElevatedButton? icon;
 
-  const TinderButton(
-      {Key? key, required this.texto, this.estilo, this.icone, this.margem})
-      : super(key: key);
+  const TinderButton({
+    Key? key,
+    required this.texto,
+    this.imagem,
+    this.cor,
+    this.icon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      //Estilo do botão
+      onPressed: () {},
       style: ButtonStyle(
         elevation: MaterialStateProperty.all(2),
         overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -21,33 +25,25 @@ class TinderButton extends StatelessWidget {
         shape: MaterialStateProperty.all(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))),
         backgroundColor: MaterialStateProperty.all(Colors.white),
-        fixedSize: MaterialStateProperty.all(const Size(500, 62)),
+        fixedSize: MaterialStateProperty.all(const Size(412, 60)),
       ),
-      //Clicável
-      onPressed: () => {},
-      // padding: const EdgeInsets.all(0.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            margin: const EdgeInsets.only(left: 10),
-            child: Icon(
-              icone,
-              color: Colors.black87,
-              size: 27,
-            ),
+          ImageIcon(
+            imagem,
+            size: 30,
+            color: cor,
           ),
-          Container(
-              margin: margem,
-              child: Text(
-                texto,
-                style: const TextStyle(
-                    fontFamily: 'Ubuntu',
-                    fontSize: 19.0,
-                    color: Colors.black54,
-                    fontWeight: FontWeight.w600),
-                textAlign: TextAlign.center,
-              ))
+          const Spacer(),
+          Text(
+            texto,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+                color: Colors.black87,
+                fontSize: 17,
+                fontWeight: FontWeight.w500),
+          ),
+          const Spacer(),
         ],
       ),
     );
